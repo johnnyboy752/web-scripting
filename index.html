@@ -23,43 +23,22 @@
 
 <!-- Body element -->
 <body>
-
     <!-- Header (Not the Head. It is different from the head.) -->
     <header>
-        <h1>Module 1: Introduction to JavaScript</h1>
+        <h1>Module 2: Functional Programming Part 1</h1>
     </header>
     <!-- End Header -->
 
  <div class="container">
-     <h2>New Terms Learned</h2>
-        
-     <p>1.) <b>Scripting language</b>: JavaScript is a scripting language, and because of this it does not require compiling. It runs directly
-            from a program or script. It only needs to be interpreted and there is an interpreter built into every browser.</p>
-            <!-- Button that when clicked is hidden and displays a fact related to the term discussed-->
-            <button id="button1" type="button" onclick="myFact1()">Click for a Fact!</button>
-            <!-- Paragraph that appears after button is clicked-->
-            <p id="fact1"></p>
-        
-            <p>2.) <b>European Computer Manufacturers Association</b> or <b>ECMA</b>: They release a yearly standard for the JavaScript language. JavaScript
-            conforms to the the ECMAscript standards.</p>
-            <button id="button2" type="button" onclick="myFact2()">Click for a Fact!</button>
-            <p id="fact2"></p>
-        
-            <p>3.) <b>Application Programming Interface</b> or <b>API</b>: This is a set of procedures that access an application such as a web page or web browser. <b>DOM</b>
-            and <b>BOM</b> are examples of API's.</p>
-            <button id="button3" type="button" onclick="myFact3()">Click for a Fact!</button>
-            <p id="fact3"></p>
-        
-            <p>4.) <b>Document Object Model</b> or <b>DOM</b> : It is an API that was created by the World Wide Web Consortium (W3C). <b>DOM</b>
-            describes how to access the contents of the web page and user actions within that page. It is used by programming languages other then JavaScript. </p>
-            <button id="button4" type="button" onclick="myFact4()">Click for a Fact!</button>
-            <p id="fact4"></p>
-        
-            <p>5.) <b>Browser Object Model</b> or <b>BOM</b>: It is also an API, and it describes how to access the features and behaviors of the browser itself.
-            It is unlike DOM because it has not set standards and differnet browsers have their own versions of the BOM. However, the BOM is largely the same from
-            one browser to another because it is to every developers advantage to adhere to a common standard.</p>
-            <button id="button5" type="button" onclick="myFact5()">Click for a Fact!</button>
-            <p id="fact5"></p>
+     <h2>Qestion 10 Numbers Website</h2>
+     <h3>Click the button below to calculate the answer to the question!</h3>
+     <button id="button1" type="button" onclick="questionTen()">Calculate</button>
+     <p>What is the answer to the following? : </p>
+     <p>6<sup>2</sup> - 64 &#247 4<sup>2</sup> * 7 - 5</p>
+        <p id="displayAnswer"></p>
+    
+
+            <h1><a href="module1.html">Click Here for Module 1</a></h1>
 </div>
     
     <!-- Footer -->
@@ -73,7 +52,7 @@
      <!-- End Footer -->
 
     <!-- Link the external JavaScript file: index.js -->
-    <script src="index.js"></script>
+    <script src="functions.js"></script>
 
 </body>
 <!-- End the body element -->

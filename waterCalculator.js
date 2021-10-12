@@ -14,8 +14,8 @@ function waterCalculator(event)
     initialReading = parseFloat(document.getElementById("initialReading").value, 10),
     finalReading = parseFloat(document.getElementById("finalReading").value, 10),
     taxPercent = parseFloat(document.getElementById("taxPercent").value, 10);
-    var waterRate = 0;
-    var totalWaterBill = 0;
+    var waterRate;
+    var totalWaterBill;
     var mathTax = taxPercent /100;
 
     document.getElementById("calculatorResults").style.visibility = "visible";
@@ -26,6 +26,9 @@ function waterCalculator(event)
     //Display the date in results div element
     const d = new Date();
     document.getElementById("displayTime").innerHTML = "Todays date is: " + d.toDateString()  + ".";
+
+        // Variables for Error Messages
+        var userErrorMessage;
 
         //Handle user-input errors for the iniital Reading and Final Reading
     //Display error messages and do not allow the form to process user input
@@ -43,15 +46,13 @@ function waterCalculator(event)
     }
 
     //Does the opposite and clears messages 
-    if ((initialReading > 0) && (finalReading > 0))
+    if ((initialReading >= 0) && (finalReading >= 0))
     {
         document.getElementById("userErrorMessage").innerHTML = "";
-        return;
     }
     if (finalReading > initialReading)
     {
         document.getElementById("userErrorMessage").innerHTML = "";
-        return;
     }
 
     // Display what period of time the Bill covers, the initial reading, final reading, total water usage, what the tax rate is, and the total for the bill

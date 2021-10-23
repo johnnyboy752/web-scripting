@@ -4,7 +4,7 @@ function numberOutput(event) {
 event.preventDefault();
 
 var isNumber = parseFloat(document.getElementById("userInput").value);
-var output =Number.isInteger(isNumber);
+var output = Number.isInteger(isNumber);
 document.getElementById("displayAnswer").innerHTML = 'Will display "True" if number or "False" if not a number: ' + output;
 }
 
@@ -35,5 +35,17 @@ document.getElementById("makeFixed").addEventListener("submit", makeFixed);
 function makeFixed(event) {
     event.preventDefault();
 
-    var 
+    var nonFixed = parseFloat(document.getElementById("fixedInput").value);
+    var fixedOutput = nonFixed.toFixed(2);
+    document.getElementById("displayFixed").innerHTML = "The number inputed was " + nonFixed + ". " + "This number rounded two places after the decimal is " + fixedOutput;
+}
+
+document.getElementById("checkNumber").addEventListener("submit", checkNumber);
+
+function checkNumber(event) {
+    event.preventDefault();
+
+    var userNumber = parseFloat(document.getElementById("numberInput").value);
+    var userOutput = Number.isNaN(userNumber);
+    document.getElementById("displayNumber").innerHTML = 'Will display "false" if value is a number and "true" if value is not a number.: ' + userOutput;
 }

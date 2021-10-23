@@ -56,7 +56,7 @@ footer{
     padding-bottom: 1px;
     background-color: lightcoral;
     text-align: center;
-    bottom: -100%;
+    bottom: -150%;
 }
 
 /* Button */
@@ -105,7 +105,8 @@ input[type=text], select {
       float: left;
       left: 0;
       width: 30%;
-      background-color: red;
+      margin: 5px;
+      background-color: whitesmoke;
   }
 
   .calculatorResults{
@@ -114,7 +115,7 @@ input[type=text], select {
       width: 30%;
       position: relative;
       float: right;
-      background-color: red;
+      background-color: whitesmoke;
   }
 
   .calculatorResults p {
@@ -125,4 +126,8 @@ input[type=text], select {
       padding-top: 30em;
       text-align: center;
       bottom: 0;
+  }
+
+  #userErrorMessage {
+      color: red;
   }

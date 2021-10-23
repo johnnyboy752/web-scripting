@@ -19,41 +19,38 @@ function waterCalculator(event)
     var mathTax = taxPercent /100;
 
     document.getElementById("calculatorResults").style.visibility = "visible";
+           
+    // Variables for Error Messages
+            var userErrorMessage;
 
+            
+    //Handle user-input errors for the iniital Reading and Final Reading
+    //Display error messages and do not allow the form to process user input
+        if (initialReading < 0)
+        {
+            userErrorMessage = 'The initial reading must be positive. Click "Clear" to clear this error message and try again.';
+            document.getElementById("userErrorMessage").innerHTML = userErrorMessage;
+            return;
+        }
+        if (finalReading < 0)
+        {
+            userErrorMessage = 'The final reading must be positive. Click "Clear" to clear this error message and try again.';
+            document.getElementById("userErrorMessage").innerHTML = userErrorMessage;
+            return;
+        }
+        if (finalReading < initialReading)
+        {
+            userErrorMessage = 'Final reading cannot be less then the initial reading. Click "Clear" to clear this error message and try again.';
+            document.getElementById("userErrorMessage").innerHTML=userErrorMessage;
+            return;
+        }
+    
     //Display First and Last name in results div element
     document.getElementById("firstLastNames").innerHTML = "Hello " + fName + " " + lName + ".";
     
     //Display the date in results div element
     const d = new Date();
-    document.getElementById("displayTime").innerHTML = "Todays date is: " + d.toDateString()  + ".";
-
-        // Variables for Error Messages
-        var userErrorMessage;
-
-        //Handle user-input errors for the iniital Reading and Final Reading
-    //Display error messages and do not allow the form to process user input
-    if ((initialReading < 0) || (finalReading < 0))
-    {
-        userErrorMessage = "The initial reading and final reading must be positive.";
-        document.getElementById("userErrorMessage").innerHTML = userErrorMessage;
-        return;
-    }
-    if (finalReading < initialReading)
-    {
-        userErrorMessage = "Final reading cannot be less then the initial reading.";
-        document.getElementById("userErrorMessage").innerHTML=userErrorMessage;
-        return;
-    }
-
-    //Does the opposite and clears messages 
-    if ((initialReading >= 0) && (finalReading >= 0))
-    {
-        document.getElementById("userErrorMessage").innerHTML = "";
-    }
-    if (finalReading > initialReading)
-    {
-        document.getElementById("userErrorMessage").innerHTML = "";
-    }
+    document.getElementById("displayTime").innerHTML = "Today's date is: " + d.toDateString()  + ".";
 
     // Display what period of time the Bill covers, the initial reading, final reading, total water usage, what the tax rate is, and the total for the bill
     document.getElementById("billFacts").innerHTML = "This bill covers the last month of water activity.";
@@ -69,7 +66,7 @@ function waterCalculator(event)
     {
         waterRate = 2.73;
         document.getElementById("testRate").innerHTML = "The rate you pay is $" + waterRate + " per hcf.";
-    } else if ((a >= 31) && (a <= 5000)) {
+    } else if ((a > 30) && (a <= 5000)) {
         waterRate = 2.45;
         document.getElementById("testRate").innerHTML = "The rate you pay is $" + waterRate + " per hcf.";
     } else {
@@ -87,38 +84,6 @@ function waterCalculator(event)
     // Writes to the paragraph with id displayBillTotal what the total water bill is for the last month
     document.getElementById("displayBillTotal").innerHTML = "Your total bill for this month is $" + totalWaterBill.toFixed(2) + ".";
 
-    // Variables for Error Messages
-    var userErrorMessage;
-
-/*
-    //Handle user-input errors for the iniital Reading and Final Reading
-    //Display error messages and do not allow the form to process user input
-    if ((initialReading < 0) || (finalReading < 0))
-    {
-        userErrorMessage = "The initial reading and final reading must be positive.";
-        document.getElementById("userErrorMessage").innerHTML = userErrorMessage;
-        return;
-    }
-    if (finalReading < initialReading)
-    {
-        userErrorMessage = "Final reading cannot be less then the initial reading.";
-        document.getElementById("userErrorMessage").innerHTML=userErrorMessage;
-        return;
-    }
-
-    //Does the opposite and clears messages 
-    if ((initialReading > 0) && (finalReading > 0))
-    {
-        document.getElementById("userErrorMessage").innerHTML = "";
-        return;
-    }
-    if (finalReading > initialReading)
-    {
-        document.getElementById("userErrorMessage").innerHTML = "";
-        return;
-    }
-*/
-
 }
 
 function erase()
@@ -129,4 +94,5 @@ function erase()
     document.getElementById("finalReading").value = " ";
     document.getElementById("taxPercent").value =  " ";
     document.getElementById("calculatorResults").style.visibility = "hidden";
+    document.getElementById("userErrorMessage").innerHTML = " ";
 }   

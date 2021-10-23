@@ -14,10 +14,14 @@
     Web Scripting, Client-side scripting, front-end development" />
     
     <!-- Maximum of 160 characters including spaces or 25 words for the description. -->
-    <meta name="description" content="Module 1 DB Assignment." />
+    <meta name="description" content="Module 3: Midterm Project." />
 
     <!-- Link the external style sheet: index.css -->
     <link href="index.css" rel="stylesheet" type="text/css" media="all"> 
+    <script>
+        let message = "This page is unfinished!";
+        alert(message);
+    </script>
 </head>
 <!-- End  head element -->
 
@@ -31,9 +35,55 @@
 
  <div class="container">
      <h2>Midterm Project</h2>
-     
-            <h1><a href="module1.html">Click Here for Module 1</a></h1>
-            <h1><a href="module2.html">Click Here for Module 2</a></h1>
+
+     <h3>Akron Water Bill Calculator</h3>
+        <div class="calculator">
+            <form id="waterCalculator">
+         <p>
+            <label for="fName">First Name: </label>
+            <input type="text" name="fName" id="fName" autocomplete="off" required>
+        </p>
+        <p>
+            <label for="lName">Last Name: </label>
+            <input type="text" name="lName" id="lName" autocomplete="off" required>
+        </p>
+        <p>
+            <label for="initialReading">Initial Reading: </label>
+            <input type="text" name="initialReading" id="initialReading" autocomplete="off" required>
+        </p>
+        <p>
+            <label for="finalReading">Final Reading: </label>
+            <input type="text" name="finalReading" id="finalReading" autocomplete="off" required>
+        </p>
+        <p>
+            <label for="taxPercent">Tax as a Percent: </label>
+            <input type="text" name="taxPercent" id="taxPercent" autocomplete="off" required>
+        </p>
+        <p>
+            <button onclick="waterCalculator()" type="submit">Calculate Water Bill</button>
+            <button onclick="erase()" type="reset">Clear</button>
+        </p>
+            </form>
+        </div>
+
+        <div class="calculatorResults" id="calculatorResults">
+            <p id="userErrorMessage"></p>
+            <p id="firstLastNames"></p>
+            <p id="displayTime"></p>
+            <p id="billFacts"></p>
+            <p id="iReading"></p>
+            <p id="fReading"></p>
+            <p id="waterUsage"></p>
+            <p id="taxRate"></p>
+            <p id="testRate"></p>
+            <p id="displayBillTotal"></p>
+        </div>
+
+     <div class="links">
+            <h1><a href="module1.html">Click Here for DP Post 1</a></h1>
+            <h1><a href="module2.html">Click Here for DP Post 2</a></h1>
+            <h1><a href="module3.html">Click Here for DP Post 3</a></h1>
+    </div>
 </div>
     
     <!-- Footer -->
@@ -45,6 +95,9 @@
         </p>
     </footer>
      <!-- End Footer -->
+
+     <!-- Link to External Javascript Files-->
+     <script src="waterCalculator.js"></script>
 
 </body>
 <!-- End the body element -->

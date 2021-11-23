@@ -75,11 +75,14 @@ function waterCalculator(event)
     }
 
     // Calculate the total Water Bill
-    var waterBillTax = 0;
+    var waterBillTax;
+    var waterBill;
+    //Equation to calculate water Bill without tax
+    waterBill = (a * waterRate) + 4;
     // Equation to calculate Tax for the water bill
-    waterBillTax = ((((finalReading - initialReading) * waterRate) + 4) * mathTax)
+    waterBillTax =  waterBill * mathTax;
     // Equation to add the Tax to the water bill to get the Total Water Bill amount
-    totalWaterBill = waterBillTax + (((finalReading - initialReading) * waterRate) + 4);
+    totalWaterBill = waterBill + waterBillTax;
 
     // Writes to the paragraph with id displayBillTotal what the total water bill is for the last month
     document.getElementById("displayBillTotal").innerHTML = "Your total bill for this month is $" + totalWaterBill.toFixed(2) + ".";

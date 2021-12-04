@@ -14,7 +14,7 @@ function waterCalculator(event)
     initialReading = parseFloat(document.getElementById("initialReading").value, 10),
     finalReading = parseFloat(document.getElementById("finalReading").value, 10),
     taxPercent = parseFloat(document.getElementById("taxPercent").value, 10);
-    var waterRate;
+    var waterUsage;
     var totalWaterBill;
     var mathTax = taxPercent /100;
 
@@ -61,19 +61,29 @@ function waterCalculator(event)
 
 
     // Determines the rate depending on how many hcf's of water were used based on the final meter reading - inital meter reading
-    var a = finalReading - initialReading;
-    if ((a >= 0) && (a <= 30)) 
+    waterUsage = finalReading - initialReading;
+    var waterBill;
+    var waterBillTax;
+    var totalWaterBill;
+    if ((waterUsage >= 0) && (waterUsage <= 30)) 
     {
-        waterRate = 2.73;
-        document.getElementById("testRate").innerHTML = "The rate you pay is $" + waterRate + " per hcf.";
-    } else if ((a > 30) && (a <= 5000)) {
-        waterRate = 2.45;
-        document.getElementById("testRate").innerHTML = "The rate you pay is $" + waterRate + " per hcf.";
-    } else {
-        waterRate = 1.29;
-        document.getElementById("testRate").innerHTML = "The rate you pay is $" + waterRate + " per hcf.";
+        waterBill = 2.73 * waterUsage + 4;
+        waterBillTax = waterBill * mathTax;
+        totalWaterBill = waterBillTax + waterBill;
+        document.getElementById("displayBillTotal").innerHTML = "Your total bill for this month is $" + totalWaterBill.toFixed(2) + ".";
+    } else if ((waterUsage > 30) && (waterUsage <= 5000)) {
+        waterBill = 2.45 * waterUsage + 12.4;
+        waterBillTax = waterBill * mathTax;
+        totalWaterBill = waterBillTax + waterBill;
+        document.getElementById("displayBillTotal").innerHTML = "Your total bill for this month is $" + totalWaterBill.toFixed(2) + ".";
+    } else if (waterUsage > 5000) {
+        waterBill = 1.29 * waterUsage + 5812.4;
+        waterBillTax = waterBill * mathTax;
+        totalWaterBill = waterBillTax + waterBill;
+        document.getElementById("displayBillTotal").innerHTML = "Your total bill for this month is $" + totalWaterBill.toFixed(2) + ".";
     }
 
+/*
     // Calculate the total Water Bill
     var waterBillTax;
     var waterBill;
@@ -86,6 +96,7 @@ function waterCalculator(event)
 
     // Writes to the paragraph with id displayBillTotal what the total water bill is for the last month
     document.getElementById("displayBillTotal").innerHTML = "Your total bill for this month is $" + totalWaterBill.toFixed(2) + ".";
+*/
 
 }
 

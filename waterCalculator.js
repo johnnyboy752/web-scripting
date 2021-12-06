@@ -44,6 +44,12 @@ function waterCalculator(event)
             document.getElementById("userErrorMessage").innerHTML=userErrorMessage;
             return;
         }
+        if (taxPercent < 0)
+        {
+            userErrorMessage = 'Tax must be a positive. Click "Clear" to clear this error message and try again.';
+            document.getElementById("userErrorMessage").innerHTML = userErrorMessage;
+            return;
+        }
     
     //Display First and Last name in results div element
     document.getElementById("firstLastNames").innerHTML = "Hello " + fName + " " + lName + ".";
@@ -82,22 +88,6 @@ function waterCalculator(event)
         totalWaterBill = waterBillTax + waterBill;
         document.getElementById("displayBillTotal").innerHTML = "Your total bill for this month is $" + totalWaterBill.toFixed(2) + ".";
     }
-
-/*
-    // Calculate the total Water Bill
-    var waterBillTax;
-    var waterBill;
-    //Equation to calculate water Bill without tax
-    waterBill = (a * waterRate) + 4;
-    // Equation to calculate Tax for the water bill
-    waterBillTax =  waterBill * mathTax;
-    // Equation to add the Tax to the water bill to get the Total Water Bill amount
-    totalWaterBill = waterBill + waterBillTax;
-
-    // Writes to the paragraph with id displayBillTotal what the total water bill is for the last month
-    document.getElementById("displayBillTotal").innerHTML = "Your total bill for this month is $" + totalWaterBill.toFixed(2) + ".";
-*/
-
 }
 
 function erase()

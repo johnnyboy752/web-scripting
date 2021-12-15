@@ -103,7 +103,7 @@ input[type=text], select {
   .calculator {
       float: left;
       left: 0;
-      width: 30%;
+      width: 40%;
       margin: 5px;
       background-color: whitesmoke;
   }
@@ -111,7 +111,7 @@ input[type=text], select {
   .calculatorResults{
       visibility: hidden;
       margin: 5px;
-      width: 30%;
+      width: 50%;
       position: relative;
       float: right;
       background-color: whitesmoke;
@@ -129,4 +129,15 @@ input[type=text], select {
 
   #userErrorMessage {
       color: red;
+  }
+
+  input#initialReading {
+        width: 20%
+  }
+  input#finalReading {
+      width: 20%
+  }
+
+  input#taxPercent {
+      width: 15%;
   }

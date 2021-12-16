@@ -9,6 +9,10 @@ function gpaCalculator(event)
     event.preventDefault();
     // Declare variables for user-input values
     // It is best to use the same name for each input as the id
+    // There is a set of variables for course names called course1-5, a set of variables for the credit hours calld creditHours1-5, a set of variables for grade ponit values called 
+    // grade1-5, a set of variables that calculates the total grade points for each course based on credit hours and grade recieved called totalGradePoints1-5, and there is also a set of varibes used for 
+    // calculating the total credit hours called totalCreditHours, variable for calculating the grand total of grade points recieved called grandTotalGradePoints,
+    // a variable called gpa which calculates the exact gpa and a variable called gpaEstimte which rounds the gpa three places after the decimal.
     var fName = document.getElementById("fName").value,
     lName = document.getElementById("lName").value,
     course1 = document.getElementById("course1").value,
@@ -37,6 +41,7 @@ function gpaCalculator(event)
     gpaEstimate = gpa.toFixed(3);
 
 
+    //This is happens after the variables are calculated and shows results below the buttons on the form in various paragraph elements.
     document.getElementById("greeting").innerHTML = "Hello " + fName + " " + lName + "!<br>" + "Here are the results of your GPA calculation<br>";
     document.getElementById("courseList").innerHTML = "The courses that you entered were the following:<br>" + "\n" + 
     "Course 1 - " + course1 + "<br>" + "Course 2 - " + course2 + "<br>" + "Course 3 - " + course3 + "<br>" + "Course 4 - " + course4 + "<br>" + "Course 5 - " + course5 + "<br>";
@@ -46,6 +51,7 @@ function gpaCalculator(event)
     document.getElementById("goodbye").innerHTML = "Have a good one, " + fName + "!";
 }
 
+//This is a function to clear the results from the calculator
 function resultsClear() {
     document.getElementById("greeting").innerHTML = " ";
     document.getElementById("courseList").innerHTML = " ";

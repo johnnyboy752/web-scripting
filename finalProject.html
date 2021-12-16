@@ -33,8 +33,8 @@
  <div class="container">
      <h2>Final Project</h2>
 
-     <!-- This is where the label and text boxes are created that allow user input to the calculator. After the user clicks "Calculate Water Bill" button
-            the function waterCalculator() is called which calculates the water Bill based on the inputted data. It also checks for errors.-->
+     <!-- This is where the label and text boxes are created that allow user input to the calculator. After the user clicks the "Calculate GPA" button
+            the function gpaCalculator() is called which calculates the GPA based on the inputted data..-->
      <h3>Kent State GPA Calculator</h3>
      <div class="w3-section">
          <form id="gpaCalculator" class="w3-padding w3-center">
@@ -204,12 +204,15 @@
 </select>
 
             <br>
+            <!-- This is where the submit button is which calculates the GPA as well as the reset button whcih resets the form and the clear button which clears the results.-->
              <p>
                 <button type="submit" class="calculate" onclick="gpaCalculator()">Calculate GPA</button>
                 <button class="calculate" type="reset" onclick="resultsClear()">Clear</button>
                 <input class="calculate" type="reset" value="Reset" onclick="resultsClear()">
              </p>
         </form>
+
+        <!--This is where the calculator results are displayed-->
         <p id="greeting"></p>
         <p id="courseList"></p>
         <p id="displayGradePoints"></p>
@@ -230,17 +233,5 @@
 
      <!-- Link to External Javascript Files-->
      <script src="finalProject.js"></script>
-        <!--
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-     <script type="text/x-mathjax-config">
-             MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-         </script>
-     <script type="text/javascript" async
-         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
-         </script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/4.0.0/math.min.js"></script>
-        -->
- 
-
 </body>
 <!-- End the body element -->

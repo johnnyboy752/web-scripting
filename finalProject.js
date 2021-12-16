@@ -1,0 +1,56 @@
+/* addEventListener */
+document.getElementById("gpaCalculator").addEventListener("submit", gpaCalculator);
+
+/* This function will accept user input, process it, and then display the output in a div elemnt for results. Function name 
+is the same as the form ID. Parameter is event */
+function gpaCalculator(event)
+{
+    //preventDefault method prevents the browser from clearing user-input entries when the user submites the form
+    event.preventDefault();
+    // Declare variables for user-input values
+    // It is best to use the same name for each input as the id
+    var fName = document.getElementById("fName").value,
+    lName = document.getElementById("lName").value,
+    course1 = document.getElementById("course1").value,
+    course2 = document.getElementById("course2").value || "(Empty)",
+    course3 = document.getElementById("course3").value || "(Empty)",
+    course4 = document.getElementById("course4").value || "(Empty)",
+    course5 = document.getElementById("course5").value || "(Empty)",
+    creditHours1 = parseFloat(document.getElementById("creditHours1").value, 10) || 0,
+    creditHours2 = parseFloat(document.getElementById("creditHours2").value, 10) || 0,
+    creditHours3 = parseFloat(document.getElementById("creditHours3").value, 10) || 0,
+    creditHours4 = parseFloat(document.getElementById("creditHours4").value, 10) || 0,
+    creditHours5 = parseFloat(document.getElementById("creditHours5").value, 10) || 0,
+    grade1 = parseFloat(document.getElementById("grade1").value, 10) || 0,
+    grade2 = parseFloat(document.getElementById("grade2").value, 10) || 0,
+    grade3 = parseFloat(document.getElementById("grade3").value, 10) || 0,
+    grade4 = parseFloat(document.getElementById("grade4").value, 10) || 0,
+    grade5 = parseFloat(document.getElementById("grade5").value, 10) || 0,
+    totalGradePoints1 = creditHours1 * grade1,
+    totalGradePoints2 = creditHours2 * grade2,
+    totalGradePoints3 = creditHours3 * grade3,
+    totalGradePoints4 = creditHours4 * grade4,
+    totalGradePoints5 = creditHours5 * grade5,
+    totalCreditHours = creditHours1 + creditHours2 + creditHours3 + creditHours4 + creditHours5,
+    grandTotalGradePoints = totalGradePoints1 + totalGradePoints2 + totalGradePoints3 + totalGradePoints4 + totalGradePoints5,
+    gpa = grandTotalGradePoints / totalCreditHours,
+    gpaEstimate = gpa.toFixed(3);
+
+
+    document.getElementById("greeting").innerHTML = "Hello " + fName + " " + lName + "!<br>" + "Here are the results of your GPA calculation<br>";
+    document.getElementById("courseList").innerHTML = "The courses that you entered were the following:<br>" + "\n" + 
+    "Course 1 - " + course1 + "<br>" + "Course 2 - " + course2 + "<br>" + "Course 3 - " + course3 + "<br>" + "Course 4 - " + course4 + "<br>" + "Course 5 - " + course5 + "<br>";
+    document.getElementById("displayGradePoints").innerHTML = "Your grades give you a total of " + grandTotalGradePoints + " points.<br>";
+    document.getElementById("displayCreditHours").innerHTML = "These points will be divided by the total number of credit hours, which for you is " + totalCreditHours + "<br>";
+    document.getElementById("displayGPA").innerHTML = "Your GPA is " + gpa + " with an estimated GPA of " + gpaEstimate;
+    document.getElementById("goodbye").innerHTML = "Have a good one, " + fName + "!";
+}
+
+function resultsClear() {
+    document.getElementById("greeting").innerHTML = " ";
+    document.getElementById("courseList").innerHTML = " ";
+    document.getElementById("displayGradePoints").innerHTML = " ";
+    document.getElementById("displayCreditHours").innerHTML = " ";
+    document.getElementById("displayGPA").innerHTML = " ";
+    document.getElementById("goodbye").innerHTML = " ";
+}

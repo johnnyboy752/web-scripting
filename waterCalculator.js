@@ -1,4 +1,3 @@
-
 //This function will is called when the user clicks the Clear button and clears the HTML elements from the calculator Results
 function erase()
 {

@@ -86,24 +86,41 @@
     <form>
         <h2>Module 6: JavaScript Classes - Using JavaScript Classes</h2>
         <h3>Concept 6</h3>
-        <p>
-
+        <p>JavaScrip Classes are extremely useful because they can be used to create objects. It can be thought of as a template for objects. Lets take for example a class that can be used to store information about a student.
+            The student properties such as name, age, and grade (among other things). To keep it simple I will keep it at just name, age, and grade. Enter the student name, age, and grade in the textboxes below. Clicking the button
+            will generate a student object from a student class.
         </p>
+        <label for="fName">First name only: </label>
+        <input type="text" name="fName" id="fName" autocomplete="off" required><br>
+        <label for="age">Age: </label>
+        <input type="text" name="age" id="age" autocomplete="off" required><br>
+        <label for="grade">Grade: </label>
+        <input type="text" name="grade" id="grade" autocomplete="off" required><br>
+        <p id="test"></p>
+        <button id="button6" type="button" onclick="conceptSix()">Click Here</button>
     </form>
 
     <form>
         <h2>Module 7: JSON - JSON.stringify()</h2>
         <h3>Concept 7</h3>
-        <p>
-
+        <p>JSON is useful for commuting with server side applicatoins. This is because of its ability to convert objects into strings and also strings back into objects. Strings are required to be in JSON syntax though.
+            According to W3Schools, JSON syntax is name/value pairs that consist "of a field name (in double quotes), followed by a colon, followed by a value (also in double quotes)". Syntax looks like the following:<br>
+            "name" : "John"<br>
+            I will use JSON to convert the following JavaScript Object into a JSON string using JASON.stringify().<br>
+            JavaScript object: <br>
+            const obj = {<br>&nbsp;&nbsp;&nbsp;&nbsp;firstName: "Jeff"<br>&nbsp;&nbsp;&nbsp;&nbsp;lastName: "Smith"<br>&nbsp;&nbsp;&nbsp;&nbsp;age: 17<br>&nbsp;&nbsp;&nbsp;
+            grade: 12<br><br>
+            Click the button below to turn the JavaScript object into a JSON string
         </p>
+        <p id="json"></p>
+        <p id="jsonFact"></p>
+        <button id="button7" type="button" onclick="conceptSeven()">Click Here</button>
     </form>
     
     <form>
         <h2>Module 4: JavaScript String Methods - slice() Method</h2>
         <h3>Concept 8</h3>
-        <p>
-
+        <p>Another one of 
         </p>
     </form>
 

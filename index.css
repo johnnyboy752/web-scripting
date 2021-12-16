@@ -141,3 +141,13 @@ input[type=text], select {
   input#taxPercent {
       width: 15%;
   }
+
+  footer#final {
+    position: absolute;
+    width: 100%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: lightcoral;
+    text-align: center;
+    bottom: -400%;
+  }

@@ -1,3 +1,20 @@
+
+//This function will is called when the user clicks the Clear button and clears the HTML elements from the calculator Results
+function erase()
+{
+    document.getElementById("fName").value = " ";
+    document.getElementById("lName").value = " ";
+    document.getElementById("initialReading").value = " ";
+    document.getElementById("finalReading").value = " ";
+    document.getElementById("taxPercent").value =  " ";
+    document.getElementById("calculatorResults").style.visibility = "hidden";
+}
+
+//Makes the calculator results not visible when the user hits an error
+function errorClear() {
+    document.getElementById("calculatorResults").style.visibility = "hidden";
+}
+
 /* addEventListener */
 document.getElementById("waterCalculator").addEventListener("submit", waterCalculator);
 
@@ -28,34 +45,36 @@ function waterCalculator(event)
     totalWaterBill;
 
     
- //Display the date in results div element
- currentDate = new Date();
- currentDate.getDate();
+    //Display the date in results div element
+    currentDate = new Date();
+    currentDate.getDate();
+        
+    currentHour = currentDate.getHours();
+        
+    yesterdayDate = new Date();
+    yesterdayDate.setDate(currentDate.getDate() - 1);
+    yesterdayDate = new Date(yesterdayDate).toUTCString();
+    yesterdayDate = yesterdayDate.split(' ').slice(0, 4).join(' ');
+        
+        
+    previousDate = new Date();
+    previousDate.setMonth(previousDate.getMonth() - 1);
+    previousDate = new Date(previousDate).toUTCString();
+    previousDate = previousDate.split(' ').slice(0, 4).join(' ');
     
- currentHour = currentDate.getHours();
-    
- yesterdayDate = new Date();
- yesterdayDate.setDate(currentDate.getDate() - 1);
- yesterdayDate = new Date(yesterdayDate).toUTCString();
- yesterdayDate = yesterdayDate.split(' ').slice(0, 4).join(' ');
-    
-    
- previousDate = new Date();
- previousDate.setMonth(previousDate.getMonth() - 1);
- previousDate = new Date(previousDate).toUTCString();
- previousDate = previousDate.split(' ').slice(0, 4).join(' ');
- 
-if (currentHour < 12) {
-    greeting = "morning";
-} else if (currentHour >= 12 && currentHour < 16) {
-    greeting = "afternoon";
-} else if (currentHour >= 16 && currentHour <=24) {
-    greeting = "evening";
-}
+    //Changes the greeting depending on the time
+    if (currentHour < 12) {
+        greeting = "morning";
+    } else if (currentHour >= 12 && currentHour < 16) {
+        greeting = "afternoon";
+    } else if (currentHour >= 16 && currentHour <=24) {
+        greeting = "evening";
+    }
 
-dates = "This is your Water Bill Statement printed today: " + currentDate + "." + "<br>";
-dates += "This bill covers the water usage from: ";
-dates += "<mark>" + previousDate + "</mark>" + " to " + "<mark>" + yesterdayDate + "</mark>.";
+    //Assigning a string to the date variable that Gives a statement about the bill and the dates it covers
+    dates = "This is your Water Bill Statement printed today: " + currentDate + "." + "<br>";
+    dates += "This bill covers the water usage from: ";
+    dates += "<mark>" + previousDate + "</mark>" + " to " + "<mark>" + yesterdayDate + "</mark>.";
 
 
     document.getElementById("calculatorResults").style.visibility = "visible";    
@@ -64,11 +83,13 @@ dates += "<mark>" + previousDate + "</mark>" + " to " + "<mark>" + yesterdayDate
         if (initialReading < 0 || (finalReading < 0) || (taxPercent < 0))
         {
             alert("Error: \nThe initial reading cannot be less than zero. OR \nThe final reading cannot be less than zero. OR \nThe tax cannot be less than zero.");
+            errorClear();
             return;
         }
         if (finalReading < initialReading)
         {
             alert("Error: The final reading cannot be less than the inital reading!");
+            errorClear();
             return;
         }
 
@@ -100,13 +121,3 @@ dates += "<mark>" + previousDate + "</mark>" + " to " + "<mark>" + yesterdayDate
     document.getElementById("thankYou").innerHTML = "Thank you for using this service! Have a wonderful rest of your " + greeting + "!";
 
 }
-
-function erase()
-{
-    document.getElementById("fName").value = " ";
-    document.getElementById("lName").value = " ";
-    document.getElementById("initialReading").value = " ";
-    document.getElementById("finalReading").value = " ";
-    document.getElementById("taxPercent").value =  " ";
-    document.getElementById("calculatorResults").style.visibility = "hidden";
-}   

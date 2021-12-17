@@ -45,6 +45,12 @@ function conceptSix() {
         }
     }
     const myStudent = new Student(firstName, userAge, userGrade);
+
+    if(firstName == "" || userAge == "" || userGrade == ""){
+        alert("Please fill out all fields in Concept 6!")
+        document.getElementById("test").innerHTML = "";
+        return;
+    }
     document.getElementById("test").innerHTML = "Hello " + myStudent.fName + "." + " It looks like you are " + myStudent.age + " years old and are in grade " + myStudent.grade + ".";
 }
 

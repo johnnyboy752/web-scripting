@@ -114,7 +114,8 @@ function waterCalculator(event)
     document.getElementById("dates").innerHTML = dates;
     document.getElementById("iReading").innerHTML = "The initial reading was " + initialReading + " hcf.";
     document.getElementById("fReading").innerHTML = "The final reading, as of yesterday, was " + finalReading + " hcf.";
-    document.getElementById("waterUsage").innerHTML = "Your total water usage for this month was " + (finalReading - initialReading) + " hcf.";
+    document.getElementById("waterUsage").innerHTML = "Your total water usage for that period is " + (finalReading - initialReading) + " hcf.";
+    document.getElementById("waterCostBeforeTax").innerHTML = "The cost for the water usage is $" + waterBill.toFixed(2);
     document.getElementById("taxRate").innerHTML = "The tax is $" + waterBillTax.toFixed(2) + ".";
     document.getElementById("displayBillTotal").innerHTML = "Your total water bill for this month is $" + totalWaterBill.toFixed(2) + ".";
     document.getElementById("thankYou").innerHTML = "Thank you for using this service! Have a wonderful rest of your " + greeting + "!";

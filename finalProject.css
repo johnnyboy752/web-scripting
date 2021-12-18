@@ -1,8 +1,18 @@
 /* 
     Created on : October 24, 2016, 4:30:48 AM
-    Author     : Samuel Chukwuemeka
+    Author     : Samuel Chukwuemeka and altered by John Keating
     Template Modified from W3.CSS 2.82 
 */
+
+/* reduces width of the dropdown menu for credit hour selection */
+#creditHours1, #creditHours2, #creditHours3, #creditHours4, #creditHours5 {
+    width: 100px;
+}
+
+/*reduces with width of the dropdown menu for grade selection */
+#grade1, #grade2, #grade3, #grade4, #grade5 {
+    width: 100px;
+}
 
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 

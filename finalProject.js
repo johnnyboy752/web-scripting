@@ -40,27 +40,7 @@ function gpaCalculator(event)
     gpa = grandTotalGradePoints / totalCreditHours,
     gpaEstimate = gpa.toFixed(3);
 
-    //Error sections that alerts user if they do not fill out all three fields for a single course.
-    if(course2 !="(Empty)" && creditHours2 == 0 && grade2 ==0){
-        alert("Please fill out ALL fields within a course selection");
-        return;
-    }
     
-    if(course3 !="(Empty)" && creditHours3 == 0 && grade3 ==0){
-        alert("Please fill out ALL fields within a course selection");
-        return;
-    }
-    
-    if(course4 != "(Empty)" && creditHours4 == 0 && grade4 ==0){
-        alert("Please fill out ALL fields within a course selection");
-        return;
-    }
-    
-    if(course5 != "(Empty)" && creditHours5 == 0 && grade5 ==0){
-        alert("Please fill out ALL fields within a course selection");
-        return;
-    }
-
     //This is happens after the variables are calculated and shows results below the buttons on the form in various paragraph elements.
     document.getElementById("greeting").innerHTML = "Hello " + fName + " " + lName + "!<br>" + "Here are the results of your GPA calculation<br>";
     document.getElementById("courseList").innerHTML = "The courses that you entered were the following:<br>" + "\n" + 
